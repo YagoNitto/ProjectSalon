@@ -1,0 +1,49 @@
+﻿@model Agendamento
+
+<div class="container p-5 rounded-3">
+    <div class="mb-5">
+        <h3>Informe seus dados:</h3>
+    </div>
+    <form method="post" asp-controller="Agendamento" asp-action="Agendar">
+        <div class="mb-3">
+            <label for="NomeCompleto" class="form-label">Nome Completo</label>
+            <input type="text" asp-for="NomeCompleto" class="form-control" id="NomeCompleto">
+            <span class="text-danger" asp-validation-for="NomeCompleto"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Celular" class="form-label">Celular (Somente números)</label>
+            <input type="text" asp-for="Celular" class="form-control" id="Celular">
+            <span class="text-danger" asp-validation-for="Celular"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Data" class="form-label">Data</label>
+            <input type="date" asp-for="Data" class="form-control" id="Data">
+            <span class="text-danger" asp-validation-for="Data"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Hora" class="form-label">Horários</label>
+            <select asp-for="Hora" class="form-select">
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
+            <span class="text-danger" asp-validation-for="Hora"></span>
+        </div>
+        <div class="mb-3">
+            <label for="FormaPagamento" class="form-label">Forma de Pagamento</label>
+            <select asp-for="FormaPagamento" class="form-select">
+                <option value="Cartão de Crédito/Débito">Cartão de Crédito/Débito</option>
+                <option value="Pix">Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+            </select>
+            <span class="text-danger" asp-validation-for="FormaPagamento"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Agendar</button>
+    </form>
+</div>
